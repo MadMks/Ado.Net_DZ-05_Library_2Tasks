@@ -92,6 +92,7 @@
             this.buttonFirstQuery.TabIndex = 0;
             this.buttonFirstQuery.Text = "1";
             this.buttonFirstQuery.UseVisualStyleBackColor = true;
+            this.buttonFirstQuery.Click += new System.EventHandler(this.buttonFirstQuery_Click);
             // 
             // buttonSecondQuery
             // 
@@ -101,6 +102,7 @@
             this.buttonSecondQuery.TabIndex = 1;
             this.buttonSecondQuery.Text = "2";
             this.buttonSecondQuery.UseVisualStyleBackColor = true;
+            this.buttonSecondQuery.Click += new System.EventHandler(this.buttonSecondQuery_Click);
             // 
             // buttonThirdQuery
             // 
