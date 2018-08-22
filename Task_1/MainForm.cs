@@ -31,6 +31,8 @@ namespace Task_1
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            this.CheckConnection();
+
             this.tasks = new string[]
             {
                 "Выведите список должников.",
@@ -39,6 +41,28 @@ namespace Task_1
                 "Вывести список книг, которые на руках у пользователя №2 (по порядку из таблицы 'Visitor').",
                 "Обнулите задолженности всех должников"
             };
+        }
+
+        private void CheckConnection()
+        {
+            using (LibraryDBEntities db = new LibraryDBEntities())
+            {
+                try
+                {
+                    db.Database.Connection.Open();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message,
+                        "Ошибка подключения к базе данных",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
+                finally
+                {
+                    db.Database.Connection?.Close();
+                }
+            }
         }
 
         private void buttonFirstQuery_Click(object sender, EventArgs e)
