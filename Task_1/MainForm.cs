@@ -54,7 +54,7 @@ namespace Task_1
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message,
-                        "Ошибка подключения к базе данных",
+                        "Ошибка подключения к серверу базы данных",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.Close();
                 }
