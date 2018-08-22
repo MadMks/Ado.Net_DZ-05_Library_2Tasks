@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,12 @@ namespace Task_1
             InitializeComponent();
 
             this.Load += MainForm_Load;
+            this.textBoxTaskText.TextChanged += TextBoxTaskText_TextChanged;
+        }
+
+        private void TextBoxTaskText_TextChanged(object sender, EventArgs e)
+        {
+            this.dataGridViewQueryResult.DataSource = null;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -28,7 +35,7 @@ namespace Task_1
                 "Выведите список должников.",
                 "Выведите список авторов книги №3 (по порядку из таблицы 'Book').",
                 "Выведите список книг, которые доступны в данный момент.",
-                "Вывести список книг, которые на руках у пользователя №2.",
+                "Вывести список книг, которые на руках у пользователя №2 (по порядку из таблицы 'Visitor').",
                 "Обнулите задолженности всех должников"
             };
         }
@@ -37,14 +44,12 @@ namespace Task_1
         {
             using (LibraryDBEntities db = new LibraryDBEntities())
             {
-                db.Database.Log = Console.Write;
-
                 this.textBoxTaskText.Text = this.tasks[0];
 
                 this.dataGridViewQueryResult.DataSource
                     = (
                     from debtor in db.Debtor
-                    select new { debtor.Visitor.LastName, debtor.Visitor.FirstName, debtor.Book.Title}
+                    select new { debtor.Visitor.FirstName, debtor.Visitor.LastName, debtor.Book.Title}
                     ).ToList();
             }
         }
@@ -53,8 +58,6 @@ namespace Task_1
         {
             using (LibraryDBEntities db = new LibraryDBEntities())
             {
-                db.Database.Log = Console.Write;
-
                 this.textBoxTaskText.Text = this.tasks[1];
 
                 this.dataGridViewQueryResult.DataSource
@@ -69,7 +72,65 @@ namespace Task_1
                                               )
                                               .Skip(2)
                                               .FirstOrDefault()
-                    select new { authors.Author.LastName, authors.Author.FirstName, authors.Book.Title}
+                    select new { authors.Author.FirstName, authors.Author.LastName, authors.Book.Title}
+                    )
+                    .ToList();
+            }
+        }
+
+        private void buttonThirdQuery_Click(object sender, EventArgs e)
+        {
+            using (LibraryDBEntities db = new LibraryDBEntities())
+            {
+                db.Database.Log = Console.Write;
+
+                this.textBoxTaskText.Text = this.tasks[2];
+
+                this.dataGridViewQueryResult.DataSource = null;
+
+                this.dataGridViewQueryResult.DataSource
+                    = (
+                    from book in db.Book
+                    where !(from debtor in db.Debtor
+                            select debtor.BookId
+                            ).Contains(book.Id)
+                    select new { book.Title }
+                    ).ToList();
+            }
+        }
+
+        private void buttonFourthQuery_Click(object sender, EventArgs e)
+        {
+            using (LibraryDBEntities db = new LibraryDBEntities())
+            {
+                this.textBoxTaskText.Text = this.tasks[3];
+
+                this.dataGridViewQueryResult.DataSource
+                    = (
+                    from debtor in db.Debtor
+                    where debtor.VisitorId == (from visitor in db.Visitor
+                                               orderby visitor.Id ascending
+                                               select visitor.Id
+                                               )
+                                               .Skip(1)
+                                               .FirstOrDefault()
+                    select new { debtor.Book.Title, debtor.Visitor.FirstName, debtor.Visitor.LastName}
+                    ).ToList();
+            }
+        }
+
+        async private void buttonFifthQuery_Click(object sender, EventArgs e)
+        {
+            using (LibraryDBEntities db = new LibraryDBEntities())
+            {
+                this.textBoxTaskText.Text = this.tasks[4];
+
+                await db.Database.ExecuteSqlCommandAsync("TRUNCATE TABLE Debtor");
+
+                this.dataGridViewQueryResult.DataSource
+                    = (
+                    from debtor in db.Debtor
+                    select new { debtor.Id, debtor.Visitor.LastName, debtor.Book.Title }
                     )
                     .ToList();
             }

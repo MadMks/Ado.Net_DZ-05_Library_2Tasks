@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBoxAllButtonQuery = new System.Windows.Forms.GroupBox();
-            this.groupBoxTaskText = new System.Windows.Forms.GroupBox();
-            this.dataGridViewQueryResult = new System.Windows.Forms.DataGridView();
-            this.textBoxTaskText = new System.Windows.Forms.TextBox();
-            this.buttonFirstQuery = new System.Windows.Forms.Button();
-            this.buttonSecondQuery = new System.Windows.Forms.Button();
-            this.buttonThirdQuery = new System.Windows.Forms.Button();
-            this.buttonFourthQuery = new System.Windows.Forms.Button();
             this.buttonFifthQuery = new System.Windows.Forms.Button();
+            this.buttonFourthQuery = new System.Windows.Forms.Button();
+            this.buttonThirdQuery = new System.Windows.Forms.Button();
+            this.buttonSecondQuery = new System.Windows.Forms.Button();
+            this.buttonFirstQuery = new System.Windows.Forms.Button();
+            this.groupBoxTaskText = new System.Windows.Forms.GroupBox();
+            this.textBoxTaskText = new System.Windows.Forms.TextBox();
+            this.dataGridViewQueryResult = new System.Windows.Forms.DataGridView();
             this.groupBoxAllButtonQuery.SuspendLayout();
             this.groupBoxTaskText.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQueryResult)).BeginInit();
@@ -56,43 +56,35 @@
             this.groupBoxAllButtonQuery.TabStop = false;
             this.groupBoxAllButtonQuery.Text = "Запросы";
             // 
-            // groupBoxTaskText
+            // buttonFifthQuery
             // 
-            this.groupBoxTaskText.Controls.Add(this.textBoxTaskText);
-            this.groupBoxTaskText.Location = new System.Drawing.Point(16, 101);
-            this.groupBoxTaskText.Name = "groupBoxTaskText";
-            this.groupBoxTaskText.Size = new System.Drawing.Size(545, 58);
-            this.groupBoxTaskText.TabIndex = 1;
-            this.groupBoxTaskText.TabStop = false;
-            this.groupBoxTaskText.Text = "Задача запроса";
+            this.buttonFifthQuery.Location = new System.Drawing.Point(335, 28);
+            this.buttonFifthQuery.Name = "buttonFifthQuery";
+            this.buttonFifthQuery.Size = new System.Drawing.Size(75, 23);
+            this.buttonFifthQuery.TabIndex = 4;
+            this.buttonFifthQuery.Text = "5";
+            this.buttonFifthQuery.UseVisualStyleBackColor = true;
+            this.buttonFifthQuery.Click += new System.EventHandler(this.buttonFifthQuery_Click);
             // 
-            // dataGridViewQueryResult
+            // buttonFourthQuery
             // 
-            this.dataGridViewQueryResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewQueryResult.Location = new System.Drawing.Point(16, 178);
-            this.dataGridViewQueryResult.Name = "dataGridViewQueryResult";
-            this.dataGridViewQueryResult.ReadOnly = true;
-            this.dataGridViewQueryResult.RowTemplate.Height = 23;
-            this.dataGridViewQueryResult.Size = new System.Drawing.Size(545, 252);
-            this.dataGridViewQueryResult.TabIndex = 2;
+            this.buttonFourthQuery.Location = new System.Drawing.Point(254, 28);
+            this.buttonFourthQuery.Name = "buttonFourthQuery";
+            this.buttonFourthQuery.Size = new System.Drawing.Size(75, 23);
+            this.buttonFourthQuery.TabIndex = 3;
+            this.buttonFourthQuery.Text = "4";
+            this.buttonFourthQuery.UseVisualStyleBackColor = true;
+            this.buttonFourthQuery.Click += new System.EventHandler(this.buttonFourthQuery_Click);
             // 
-            // textBoxTaskText
+            // buttonThirdQuery
             // 
-            this.textBoxTaskText.Location = new System.Drawing.Point(11, 22);
-            this.textBoxTaskText.Name = "textBoxTaskText";
-            this.textBoxTaskText.ReadOnly = true;
-            this.textBoxTaskText.Size = new System.Drawing.Size(519, 21);
-            this.textBoxTaskText.TabIndex = 0;
-            // 
-            // buttonFirstQuery
-            // 
-            this.buttonFirstQuery.Location = new System.Drawing.Point(11, 28);
-            this.buttonFirstQuery.Name = "buttonFirstQuery";
-            this.buttonFirstQuery.Size = new System.Drawing.Size(75, 23);
-            this.buttonFirstQuery.TabIndex = 0;
-            this.buttonFirstQuery.Text = "1";
-            this.buttonFirstQuery.UseVisualStyleBackColor = true;
-            this.buttonFirstQuery.Click += new System.EventHandler(this.buttonFirstQuery_Click);
+            this.buttonThirdQuery.Location = new System.Drawing.Point(173, 28);
+            this.buttonThirdQuery.Name = "buttonThirdQuery";
+            this.buttonThirdQuery.Size = new System.Drawing.Size(75, 23);
+            this.buttonThirdQuery.TabIndex = 2;
+            this.buttonThirdQuery.Text = "3";
+            this.buttonThirdQuery.UseVisualStyleBackColor = true;
+            this.buttonThirdQuery.Click += new System.EventHandler(this.buttonThirdQuery_Click);
             // 
             // buttonSecondQuery
             // 
@@ -104,38 +96,49 @@
             this.buttonSecondQuery.UseVisualStyleBackColor = true;
             this.buttonSecondQuery.Click += new System.EventHandler(this.buttonSecondQuery_Click);
             // 
-            // buttonThirdQuery
+            // buttonFirstQuery
             // 
-            this.buttonThirdQuery.Location = new System.Drawing.Point(173, 28);
-            this.buttonThirdQuery.Name = "buttonThirdQuery";
-            this.buttonThirdQuery.Size = new System.Drawing.Size(75, 23);
-            this.buttonThirdQuery.TabIndex = 2;
-            this.buttonThirdQuery.Text = "3";
-            this.buttonThirdQuery.UseVisualStyleBackColor = true;
+            this.buttonFirstQuery.Location = new System.Drawing.Point(11, 28);
+            this.buttonFirstQuery.Name = "buttonFirstQuery";
+            this.buttonFirstQuery.Size = new System.Drawing.Size(75, 23);
+            this.buttonFirstQuery.TabIndex = 0;
+            this.buttonFirstQuery.Text = "1";
+            this.buttonFirstQuery.UseVisualStyleBackColor = true;
+            this.buttonFirstQuery.Click += new System.EventHandler(this.buttonFirstQuery_Click);
             // 
-            // buttonFourthQuery
+            // groupBoxTaskText
             // 
-            this.buttonFourthQuery.Location = new System.Drawing.Point(254, 28);
-            this.buttonFourthQuery.Name = "buttonFourthQuery";
-            this.buttonFourthQuery.Size = new System.Drawing.Size(75, 23);
-            this.buttonFourthQuery.TabIndex = 3;
-            this.buttonFourthQuery.Text = "4";
-            this.buttonFourthQuery.UseVisualStyleBackColor = true;
+            this.groupBoxTaskText.Controls.Add(this.textBoxTaskText);
+            this.groupBoxTaskText.Location = new System.Drawing.Point(16, 101);
+            this.groupBoxTaskText.Name = "groupBoxTaskText";
+            this.groupBoxTaskText.Size = new System.Drawing.Size(545, 58);
+            this.groupBoxTaskText.TabIndex = 1;
+            this.groupBoxTaskText.TabStop = false;
+            this.groupBoxTaskText.Text = "Задача запроса";
             // 
-            // buttonFifthQuery
+            // textBoxTaskText
             // 
-            this.buttonFifthQuery.Location = new System.Drawing.Point(335, 28);
-            this.buttonFifthQuery.Name = "buttonFifthQuery";
-            this.buttonFifthQuery.Size = new System.Drawing.Size(75, 23);
-            this.buttonFifthQuery.TabIndex = 4;
-            this.buttonFifthQuery.Text = "5";
-            this.buttonFifthQuery.UseVisualStyleBackColor = true;
+            this.textBoxTaskText.Location = new System.Drawing.Point(11, 22);
+            this.textBoxTaskText.Name = "textBoxTaskText";
+            this.textBoxTaskText.ReadOnly = true;
+            this.textBoxTaskText.Size = new System.Drawing.Size(519, 21);
+            this.textBoxTaskText.TabIndex = 0;
+            // 
+            // dataGridViewQueryResult
+            // 
+            this.dataGridViewQueryResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewQueryResult.Location = new System.Drawing.Point(16, 178);
+            this.dataGridViewQueryResult.Name = "dataGridViewQueryResult";
+            this.dataGridViewQueryResult.ReadOnly = true;
+            this.dataGridViewQueryResult.RowTemplate.Height = 23;
+            this.dataGridViewQueryResult.Size = new System.Drawing.Size(545, 252);
+            this.dataGridViewQueryResult.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(576, 450);
             this.Controls.Add(this.dataGridViewQueryResult);
             this.Controls.Add(this.groupBoxTaskText);
             this.Controls.Add(this.groupBoxAllButtonQuery);
