@@ -57,29 +57,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Author.cs">
+    <Compile Include="EntityFramework\Author.cs">
       <DependentUpon>LibraryModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Book.cs">
+    <Compile Include="EntityFramework\Book.cs">
       <DependentUpon>LibraryModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="BookAuthor.cs">
+    <Compile Include="EntityFramework\BookAuthor.cs">
       <DependentUpon>LibraryModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Debtor.cs">
+    <Compile Include="EntityFramework\Debtor.cs">
       <DependentUpon>LibraryModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="LibraryModel.Context.cs">
+    <Compile Include="EntityFramework\LibraryModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LibraryModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="LibraryModel.cs">
+    <Compile Include="EntityFramework\LibraryModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LibraryModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="LibraryModel.Designer.cs">
+    <Compile Include="EntityFramework\LibraryModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LibraryModel.edmx</DependentUpon>
@@ -92,7 +92,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Visitor.cs">
+    <Compile Include="EntityFramework\Visitor.cs">
       <DependentUpon>LibraryModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
@@ -107,11 +107,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="LibraryModel.edmx">
+    <EntityDeploy Include="EntityFramework\LibraryModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LibraryModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="LibraryModel.edmx.diagram">
+    <None Include="EntityFramework\LibraryModel.edmx.diagram">
       <DependentUpon>LibraryModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -129,12 +129,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LibraryModel.Context.tt">
+    <Content Include="EntityFramework\LibraryModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>LibraryModel.edmx</DependentUpon>
       <LastGenOutput>LibraryModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="LibraryModel.tt">
+    <Content Include="EntityFramework\LibraryModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>LibraryModel.edmx</DependentUpon>
       <LastGenOutput>LibraryModel.cs</LastGenOutput>

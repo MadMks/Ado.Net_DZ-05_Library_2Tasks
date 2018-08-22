@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Task_1
+namespace Task_1.EntityFramework
 {
     using System;
     using System.Data.Entity;

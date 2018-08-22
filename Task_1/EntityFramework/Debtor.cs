@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Task_1
+namespace Task_1.EntityFramework
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class BookAuthor
+    public partial class Debtor
     {
         public int Id { get; set; }
         public int BookId { get; set; }
-        public int AuthorId { get; set; }
+        public int VisitorId { get; set; }
     
-        public virtual Author Author { get; set; }
         public virtual Book Book { get; set; }
+        public virtual Visitor Visitor { get; set; }
     }
 }

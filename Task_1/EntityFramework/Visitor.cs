@@ -7,17 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Task_1
+namespace Task_1.EntityFramework
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Author
+    public partial class Visitor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Author()
+        public Visitor()
         {
-            this.BookAuthor = new HashSet<BookAuthor>();
+            this.Debtor = new HashSet<Debtor>();
         }
     
         public int Id { get; set; }
@@ -25,6 +25,6 @@ namespace Task_1
         public string LastName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BookAuthor> BookAuthor { get; set; }
+        public virtual ICollection<Debtor> Debtor { get; set; }
     }
 }
