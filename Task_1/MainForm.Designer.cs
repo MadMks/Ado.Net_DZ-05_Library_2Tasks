@@ -142,6 +142,8 @@
             this.Controls.Add(this.dataGridViewQueryResult);
             this.Controls.Add(this.groupBoxTaskText);
             this.Controls.Add(this.groupBoxAllButtonQuery);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Task 1";
             this.groupBoxAllButtonQuery.ResumeLayout(false);
