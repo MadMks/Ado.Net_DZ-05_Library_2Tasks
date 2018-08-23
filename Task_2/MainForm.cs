@@ -54,11 +54,8 @@ namespace Task_2
             }
 
             this.ShowTheAuthorsOfTheBook();
-        }
 
-        private void dataGridViewQueryResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            this.ShowTheAuthorsOfTheBook();
+            this.dataGridViewQueryResult.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void ShowTheAuthorsOfTheBook()
@@ -69,7 +66,6 @@ namespace Task_2
                 {
                     db.Database.Log = Console.Write;
 
-                    //string selectBookTitle = dataGridViewQueryResult.CurrentRow.Cells[0].Value.ToString();
                     string selectBookTitle =
                         this.dataGridViewQueryResult[
                             this.dataGridViewQueryResult.CurrentCell.ColumnIndex,
@@ -88,6 +84,11 @@ namespace Task_2
                     this.listBoxAuthors.Items.AddRange(temp);
                 }
             }
+        }
+
+        private void dataGridViewQueryResult_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.ShowTheAuthorsOfTheBook();
         }
     }
 }

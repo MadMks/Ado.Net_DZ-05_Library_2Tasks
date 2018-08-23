@@ -62,7 +62,7 @@
             this.dataGridViewQueryResult.RowTemplate.Height = 23;
             this.dataGridViewQueryResult.Size = new System.Drawing.Size(317, 290);
             this.dataGridViewQueryResult.TabIndex = 2;
-            this.dataGridViewQueryResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewQueryResult_CellContentClick);
+            this.dataGridViewQueryResult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewQueryResult_CellClick);
             // 
             // listBoxAuthors
             // 
@@ -81,6 +81,8 @@
             this.Controls.Add(this.dataGridViewQueryResult);
             this.Controls.Add(this.buttonFind);
             this.Controls.Add(this.textBoxFind);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Task 2";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQueryResult)).EndInit();
