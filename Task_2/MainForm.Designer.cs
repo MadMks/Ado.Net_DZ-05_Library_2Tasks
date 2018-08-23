@@ -30,8 +30,9 @@
         {
             this.textBoxFind = new System.Windows.Forms.TextBox();
             this.buttonFind = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridViewQueryResult = new System.Windows.Forms.DataGridView();
+            this.listBoxAuthors = new System.Windows.Forms.ListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQueryResult)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxFind
@@ -50,27 +51,39 @@
             this.buttonFind.TabIndex = 1;
             this.buttonFind.Text = "Поиск";
             this.buttonFind.UseVisualStyleBackColor = true;
+            this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
             // 
-            // dataGridView1
+            // dataGridViewQueryResult
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 62);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(513, 175);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridViewQueryResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewQueryResult.Location = new System.Drawing.Point(13, 62);
+            this.dataGridViewQueryResult.Name = "dataGridViewQueryResult";
+            this.dataGridViewQueryResult.ReadOnly = true;
+            this.dataGridViewQueryResult.RowTemplate.Height = 23;
+            this.dataGridViewQueryResult.Size = new System.Drawing.Size(317, 290);
+            this.dataGridViewQueryResult.TabIndex = 2;
+            this.dataGridViewQueryResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewQueryResult_CellContentClick);
+            // 
+            // listBoxAuthors
+            // 
+            this.listBoxAuthors.FormattingEnabled = true;
+            this.listBoxAuthors.Location = new System.Drawing.Point(348, 62);
+            this.listBoxAuthors.Name = "listBoxAuthors";
+            this.listBoxAuthors.Size = new System.Drawing.Size(178, 290);
+            this.listBoxAuthors.TabIndex = 3;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 250);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(542, 367);
+            this.Controls.Add(this.listBoxAuthors);
+            this.Controls.Add(this.dataGridViewQueryResult);
             this.Controls.Add(this.buttonFind);
             this.Controls.Add(this.textBoxFind);
             this.Name = "MainForm";
             this.Text = "Task 2";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQueryResult)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,7 +93,8 @@
 
         private System.Windows.Forms.TextBox textBoxFind;
         private System.Windows.Forms.Button buttonFind;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewQueryResult;
+        private System.Windows.Forms.ListBox listBoxAuthors;
     }
 }
 
