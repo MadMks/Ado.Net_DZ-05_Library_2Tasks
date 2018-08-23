@@ -22,6 +22,8 @@ namespace Task_2
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            this.CheckConnection();
+
             this.buttonFind.Enabled = false;
             this.textBoxFind.MaxLength = 35;
         }
@@ -40,6 +42,8 @@ namespace Task_2
 
         private void buttonFind_Click(object sender, EventArgs e)
         {
+            this.listBoxAuthors.Items.Clear();
+
             using (LibraryDBEntities db = new LibraryDBEntities())
             {
                 this.dataGridViewQueryResult.DataSource
@@ -86,6 +90,28 @@ namespace Task_2
         private void dataGridViewQueryResult_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             this.ShowTheAuthorsOfTheBook();
+        }
+
+        private void CheckConnection()
+        {
+            using (LibraryDBEntities db = new LibraryDBEntities())
+            {
+                try
+                {
+                    db.Database.Connection.Open();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message,
+                        "Ошибка подключения к серверу базы данных",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
+                finally
+                {
+                    db.Database.Connection?.Close();
+                }
+            }
         }
     }
 }

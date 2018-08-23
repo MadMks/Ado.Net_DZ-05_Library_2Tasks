@@ -32,7 +32,9 @@
             this.buttonFind = new System.Windows.Forms.Button();
             this.dataGridViewQueryResult = new System.Windows.Forms.DataGridView();
             this.listBoxAuthors = new System.Windows.Forms.ListBox();
+            this.groupBoxAuthors = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQueryResult)).BeginInit();
+            this.groupBoxAuthors.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxFind
@@ -67,17 +69,27 @@
             // listBoxAuthors
             // 
             this.listBoxAuthors.FormattingEnabled = true;
-            this.listBoxAuthors.Location = new System.Drawing.Point(348, 62);
+            this.listBoxAuthors.Location = new System.Drawing.Point(15, 23);
             this.listBoxAuthors.Name = "listBoxAuthors";
-            this.listBoxAuthors.Size = new System.Drawing.Size(178, 290);
+            this.listBoxAuthors.Size = new System.Drawing.Size(151, 251);
             this.listBoxAuthors.TabIndex = 3;
+            // 
+            // groupBoxAuthors
+            // 
+            this.groupBoxAuthors.Controls.Add(this.listBoxAuthors);
+            this.groupBoxAuthors.Location = new System.Drawing.Point(347, 62);
+            this.groupBoxAuthors.Name = "groupBoxAuthors";
+            this.groupBoxAuthors.Size = new System.Drawing.Size(183, 290);
+            this.groupBoxAuthors.TabIndex = 4;
+            this.groupBoxAuthors.TabStop = false;
+            this.groupBoxAuthors.Text = "Фамилии авторов";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 367);
-            this.Controls.Add(this.listBoxAuthors);
+            this.Controls.Add(this.groupBoxAuthors);
             this.Controls.Add(this.dataGridViewQueryResult);
             this.Controls.Add(this.buttonFind);
             this.Controls.Add(this.textBoxFind);
@@ -86,6 +98,7 @@
             this.Name = "MainForm";
             this.Text = "Task 2";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQueryResult)).EndInit();
+            this.groupBoxAuthors.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,6 +110,7 @@
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.DataGridView dataGridViewQueryResult;
         private System.Windows.Forms.ListBox listBoxAuthors;
+        private System.Windows.Forms.GroupBox groupBoxAuthors;
     }
 }
 
