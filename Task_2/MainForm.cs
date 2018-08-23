@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Task_2.EntityFramework;
 
 namespace Task_2
 {
@@ -41,8 +42,6 @@ namespace Task_2
         {
             using (LibraryDBEntities db = new LibraryDBEntities())
             {
-                db.Database.Log = Console.Write;
-
                 this.dataGridViewQueryResult.DataSource
                     = (
                     from book in db.BookAuthor
@@ -64,8 +63,6 @@ namespace Task_2
             {
                 using (LibraryDBEntities db = new LibraryDBEntities())
                 {
-                    db.Database.Log = Console.Write;
-
                     string selectBookTitle =
                         this.dataGridViewQueryResult[
                             this.dataGridViewQueryResult.CurrentCell.ColumnIndex,

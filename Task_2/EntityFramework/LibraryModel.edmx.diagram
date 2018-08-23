@@ -7,11 +7,12 @@
       <Diagram DiagramId="9b67a74e8eab40d5897b1bef6ed32e1d" Name="Diagram1">
         <EntityTypeShape EntityType="LibraryDBModel.Author" Width="1.5" PointX="6.125" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="LibraryDBModel.Book" Width="1.5" PointX="3.375" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryDBModel.BookAuthor" Width="1.5" PointX="4.875" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryDBModel.Debtor" Width="1.5" PointX="2" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.BookAuthor" Width="1.5" PointX="5.125" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Debtor" Width="1.5" PointX="2" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="LibraryDBModel.Visitor" Width="1.5" PointX="0.625" PointY="1.375" IsExpanded="true" />
         <AssociationConnector Association="LibraryDBModel.FK__BookAutho__Autho__173876EA" ManuallyRouted="false" />
-        <AssociationConnector Association="LibraryDBModel.FK__BookAutho__BookI__164452B1" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK__BookAutho__BookI__164452B1" ManuallyRouted="false" >
+        </AssociationConnector>
         <AssociationConnector Association="LibraryDBModel.FK__Debtor__BookId__1A14E395" ManuallyRouted="false" />
         <AssociationConnector Association="LibraryDBModel.FK__Debtor__VisitorI__1B0907CE" ManuallyRouted="false" />
       </Diagram>

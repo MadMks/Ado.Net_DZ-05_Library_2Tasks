@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\code\git\step_repos\ado.net\DZ\Ado.Net_DZ-05_Library_2Tasks\Task_2\LibraryModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\code\git\step_repos\ado.net\DZ\Ado.Net_DZ-05_Library_2Tasks\Task_2\EntityFramework\LibraryModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
